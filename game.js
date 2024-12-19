@@ -18,7 +18,7 @@ let timerInterval;
 const fruitTypes = ['apple', 'banana', 'orange', 'melon', 'watermelon'];
 const fruitImages = {};
 const bombImage = new Image();
-bombImage.src = 'images/bomb.png'; 
+bombImage.src = 'bomb.png'; 
 
 let sliceSound = new Audio('slice.mp3');
 let missSound = new Audio('miss.mp3');
@@ -32,7 +32,7 @@ const totalImages = fruitTypes.length;
 
 fruitTypes.forEach(fruit => {
     fruitImages[fruit] = new Image();
-    fruitImages[fruit].src = `images/${fruit}.png`;
+    fruitImages[fruit].src = `${fruit}.png`;
 
     fruitImages[fruit].onload = () => {
         imagesLoaded++;
