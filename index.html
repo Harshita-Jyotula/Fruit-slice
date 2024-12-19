@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Ninja</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="gameSettings">
+        <h1>Fruit Ninja</h1>
+        <label for="timeLimit">Time Limit (seconds): </label>
+        <input type="number" id="timeLimit" min="1" value="60" required>
+        <br><br>
+        <label for="targetScore">Target Score: </label>
+        <input type="number" id="targetScore" min="10" value="100" required>
+        <br><br>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <script>
+        function startGame() {
+            const timeLimit = parseInt(document.getElementById('timeLimit').value);
+            const targetScore = parseInt(document.getElementById('targetScore').value);
+            
+            if (isNaN(timeLimit) || isNaN(targetScore)) {
+                alert('Please enter valid time limit and target score.');
+                return;
+            }
+
+            localStorage.setItem('timeLimit', timeLimit);
+            localStorage.setItem('targetScore', targetScore);
+
+            window.location.href = 'game.html';
+        }
+    </script>
+</body>
+</html>
